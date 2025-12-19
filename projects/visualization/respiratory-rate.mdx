@@ -1,0 +1,94 @@
+---
+title: Respiratory rate monitor
+description: Real-time respiratory rate detection using webcam and signal processing
+---
+
+# Respiratory rate monitor
+
+A web-based tool that uses computer vision and signal processing to estimate respiratory rate in real-time using a standard webcam.
+
+## Overview
+
+This project demonstrates non-contact respiratory monitoring by analyzing subtle motion patterns captured by a webcam. It showcases applications of computer vision and signal processing in health monitoring.
+
+## How it works
+
+### Motion detection
+The system analyzes video frames to detect small movements associated with breathing:
+1. Captures video stream from webcam
+2. Identifies region of interest (chest/abdomen area)
+3. Tracks pixel intensity changes over time
+4. Extracts motion signal from video frames
+
+### Signal processing
+Raw motion data is processed to extract respiratory patterns:
+- **Filtering**: Removes noise and isolates breathing frequency range
+- **Peak detection**: Identifies individual breaths
+- **Rate calculation**: Computes breaths per minute
+- **Smoothing**: Averages over time window for stable estimate
+
+### Visualization
+Real-time display of:
+- Live video feed with region of interest overlay
+- Respiratory waveform showing breathing pattern
+- Current respiratory rate estimate
+- Signal quality indicators
+
+## Technical implementation
+
+**Technologies used:**
+- HTML5 Canvas for video processing
+- JavaScript for signal processing algorithms
+- WebRTC for webcam access
+- Real-time rendering and computation
+
+**Key algorithms:**
+- Motion amplification techniques
+- Bandpass filtering (typical breathing frequency: 0.2-0.5 Hz)
+- Peak detection with adaptive thresholding
+- Moving average for rate estimation
+
+## Applications
+
+This approach demonstrates potential for:
+- **Remote patient monitoring**: Non-contact vital sign assessment
+- **Sleep studies**: Breathing pattern analysis during sleep
+- **Telemedicine**: Respiratory assessment during video consultations
+- **Research**: Algorithm development for contactless monitoring
+
+## Limitations
+
+Current limitations include:
+- Requires stable lighting conditions
+- Sensitive to subject movement
+- Accuracy depends on camera quality
+- Not a medical device (research/educational purposes only)
+
+## Try it out
+
+The respiratory rate monitor is available as an interactive web tool. It requires:
+- Modern web browser with webcam support
+- Adequate lighting
+- Stable positioning of subject
+- Permission to access webcam
+
+[Visit main website to try the tool →](https://2dvisio.github.io)
+
+## Future directions
+
+Potential improvements:
+- Machine learning for robust motion detection
+- Multi-person monitoring
+- Integration with other vital signs
+- Mobile device optimization
+- Clinical validation studies
+
+## Research context
+
+This project relates to broader research on:
+- Contactless vital sign monitoring
+- Computer vision in healthcare
+- Remote patient monitoring technologies
+- Digital health innovation
+
+[View related publications →](/research/publications)
