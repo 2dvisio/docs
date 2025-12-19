@@ -5,76 +5,90 @@ description: Real-time respiratory rate detection using webcam and signal proces
 
 # Respiratory rate monitor
 
-A web-based tool that uses computer vision and signal processing to estimate respiratory rate from webcam video in real-time.
+A web-based tool that uses computer vision and signal processing to estimate respiratory rate in real-time using a standard webcam.
 
 ## Overview
 
-This project demonstrates non-contact respiratory monitoring by analyzing subtle motion patterns captured by a standard webcam. It showcases applications of computer vision in health monitoring.
+This project demonstrates non-contact respiratory monitoring by analyzing subtle motion patterns captured by a webcam. It showcases applications of computer vision and signal processing in health monitoring.
 
 ## How it works
 
 ### Motion detection
-1. Captures video frames from webcam
-2. Analyzes pixel intensity changes over time
-3. Focuses on chest/torso region
-4. Extracts motion signal from video
+The system analyzes video frames to detect small movements associated with breathing:
+1. Captures video stream from webcam
+2. Identifies region of interest (chest/abdomen area)
+3. Tracks pixel intensity changes over time
+4. Extracts motion signal from video frames
 
 ### Signal processing
-1. Filters noise from motion signal
-2. Applies frequency analysis
-3. Identifies periodic breathing pattern
-4. Calculates respiratory rate (breaths per minute)
+Raw motion data is processed to extract respiratory patterns:
+- **Filtering**: Removes noise and isolates breathing frequency range
+- **Peak detection**: Identifies individual breaths
+- **Rate calculation**: Computes breaths per minute
+- **Smoothing**: Averages over time window for stable estimate
 
 ### Visualization
-- Real-time waveform display
-- Respiratory rate estimation
+Real-time display of:
+- Live video feed with region of interest overlay
+- Respiratory waveform showing breathing pattern
+- Current respiratory rate estimate
 - Signal quality indicators
-- Visual feedback for positioning
 
 ## Technical implementation
 
 **Technologies used:**
-- HTML5 Canvas for rendering
-- JavaScript for signal processing
+- HTML5 Canvas for video processing
+- JavaScript for signal processing algorithms
 - WebRTC for webcam access
-- Fourier analysis for frequency detection
+- Real-time rendering and computation
 
 **Key algorithms:**
-- Motion detection via frame differencing
-- Band-pass filtering for respiratory frequencies
-- Peak detection for breath counting
-- Smoothing and noise reduction
+- Motion amplification techniques
+- Bandpass filtering (typical breathing frequency: 0.2-0.5 Hz)
+- Peak detection with adaptive thresholding
+- Moving average for rate estimation
 
-## Use cases
+## Applications
 
-### Research and development
-- Prototype for contactless vital sign monitoring
-- Algorithm testing and validation
-- Educational demonstration
-
-### Proof of concept
-- Feasibility of webcam-based monitoring
-- Signal processing technique evaluation
-- User interface design exploration
+This approach demonstrates potential for:
+- **Remote patient monitoring**: Non-contact vital sign assessment
+- **Sleep studies**: Breathing pattern analysis during sleep
+- **Telemedicine**: Respiratory assessment during video consultations
+- **Research**: Algorithm development for contactless monitoring
 
 ## Limitations
 
-- Requires stable positioning
-- Sensitive to lighting conditions
-- Motion artifacts can affect accuracy
-- Not a medical-grade device
+Current limitations include:
+- Requires stable lighting conditions
+- Sensitive to subject movement
+- Accuracy depends on camera quality
+- Not a medical device (research/educational purposes only)
 
-## Access
+## Try it out
 
-The respiratory rate monitor is available through the portfolio website. It requires webcam access and works best in well-lit, stable conditions.
+The respiratory rate monitor is available as an interactive web tool. It requires:
+- Modern web browser with webcam support
+- Adequate lighting
+- Stable positioning of subject
+- Permission to access webcam
 
-**Try it:** [2dvisio.github.io/projects/rr](https://2dvisio.github.io/projects/rr)
+[Visit main website to try the tool →](https://2dvisio.github.io)
 
 ## Future directions
 
-Potential enhancements:
-- Improved motion tracking algorithms
-- Multi-person detection
+Potential improvements:
+- Machine learning for robust motion detection
+- Multi-person monitoring
 - Integration with other vital signs
 - Mobile device optimization
-- Machine learning for robustness
+- Clinical validation studies
+
+## Research context
+
+This project relates to broader research on:
+- Contactless vital sign monitoring
+- Computer vision in healthcare
+- Remote patient monitoring technologies
+- Digital health innovation
+
+[View related publications →](/research/publications)
